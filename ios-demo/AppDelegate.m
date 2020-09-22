@@ -10,7 +10,7 @@
 #import "WKWebViewController.h"
 #import "SizeViewController.h"
 #import "WXViewController.h"
-//#import "dummyViewController.h"
+#import "dummyViewController.h"
 
 @interface AppDelegate ()<UITabBarControllerDelegate>   // 实现delegate第一步：声明要实现的delegate
 
@@ -27,9 +27,9 @@
     
     SizeViewController *svc = [[SizeViewController alloc] init];
     WXViewController *wxvc = [[WXViewController alloc] init];
-//    dummyViewController *dvc = [[dummyViewController alloc] init];
+    dummyViewController *dvc = [[dummyViewController alloc] init];
 
-    [tabBarC setViewControllers:@[nc, svc, wxvc/*, dvc*/]];   // tab 位置是按这个顺序
+    [tabBarC setViewControllers:@[nc, svc, dvc, wxvc]];   // tab 位置是按这个顺序
     tabBarC.delegate = self;    // 实现delegate第二步：设置self为delegate的接收者
 
     [self.window setRootViewController:tabBarC];

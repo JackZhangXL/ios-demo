@@ -46,10 +46,8 @@
 		04C7E35F22DE28A000B98634 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04C7E36022DE28A000B98634 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2AB4D1FF3FD20713A27EA040 /* libPods-ios-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B506040CA685A6AE89F1DB4 /* Pods-ios-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-demo.debug.xcconfig"; path = "Target Support Files/Pods-ios-demo/Pods-ios-demo.debug.xcconfig"; sourceTree = "<group>"; };
-		363F1008AC210AC7BDD7B05E /* Pods-myByteDance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myByteDance.release.xcconfig"; path = "Target Support Files/Pods-myByteDance/Pods-myByteDance.release.xcconfig"; sourceTree = "<group>"; };
-		6244378801A516C175452FB8 /* Pods-ios-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-demo.release.xcconfig"; path = "Target Support Files/Pods-ios-demo/Pods-ios-demo.release.xcconfig"; sourceTree = "<group>"; };
-		657B0837642D343E4A335B24 /* Pods-myByteDance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myByteDance.debug.xcconfig"; path = "Target Support Files/Pods-myByteDance/Pods-myByteDance.debug.xcconfig"; sourceTree = "<group>"; };
+		5401A551B0D97C3854FF2AC8 /* Pods-ios-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-demo.release.xcconfig"; path = "Target Support Files/Pods-ios-demo/Pods-ios-demo.release.xcconfig"; sourceTree = "<group>"; };
+		5E382B44286AD438CD4234D6 /* Pods-ios-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-demo.debug.xcconfig"; path = "Target Support Files/Pods-ios-demo/Pods-ios-demo.debug.xcconfig"; sourceTree = "<group>"; };
 		658C051C251A06AE00D95CB0 /* Static */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Static; path = "ios-demo/WKWebView/Static"; sourceTree = SOURCE_ROOT; };
 		658C051D251A06AE00D95CB0 /* WKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKWebViewController.m; path = "ios-demo/WKWebView/WKWebViewController.m"; sourceTree = SOURCE_ROOT; };
 		658C051E251A06AE00D95CB0 /* WKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKWebViewController.h; path = "ios-demo/WKWebView/WKWebViewController.h"; sourceTree = SOURCE_ROOT; };
@@ -139,8 +137,8 @@
 			children = (
 				04C7E35022DE289E00B98634 /* ios-demo */,
 				04C7E34F22DE289E00B98634 /* Products */,
-				9BAE8F0A2FF5AE01AD3526CF /* Pods */,
 				B2F4DD26FCDE72570E38453C /* Frameworks */,
+				31D9B89A0D12787706F73931 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,13 +182,11 @@
 			path = Size;
 			sourceTree = "<group>";
 		};
-		9BAE8F0A2FF5AE01AD3526CF /* Pods */ = {
+		31D9B89A0D12787706F73931 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				657B0837642D343E4A335B24 /* Pods-myByteDance.debug.xcconfig */,
-				363F1008AC210AC7BDD7B05E /* Pods-myByteDance.release.xcconfig */,
-				2B506040CA685A6AE89F1DB4 /* Pods-ios-demo.debug.xcconfig */,
-				6244378801A516C175452FB8 /* Pods-ios-demo.release.xcconfig */,
+				5E382B44286AD438CD4234D6 /* Pods-ios-demo.debug.xcconfig */,
+				5401A551B0D97C3854FF2AC8 /* Pods-ios-demo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -515,7 +511,7 @@
 		};
 		04C7E36522DE28A000B98634 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2B506040CA685A6AE89F1DB4 /* Pods-ios-demo.debug.xcconfig */;
+			baseConfigurationReference = 5E382B44286AD438CD4234D6 /* Pods-ios-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -544,7 +540,7 @@
 		};
 		04C7E36622DE28A000B98634 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6244378801A516C175452FB8 /* Pods-ios-demo.release.xcconfig */;
+			baseConfigurationReference = 5401A551B0D97C3854FF2AC8 /* Pods-ios-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

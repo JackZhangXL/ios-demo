@@ -16,6 +16,16 @@
 
 @implementation dummyViewController
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.tabBarItem.title = @"测试";
+        self.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/test@3x.png"];
+        self.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/test_selected@3x.png"];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
