@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		043E6AFC2331D2B600949BFA /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043E6AFB2331D2B600949BFA /* MineViewController.m */; };
+		043E6AFC2331D2B600949BFA /* WXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043E6AFB2331D2B600949BFA /* WXViewController.m */; };
 		043E6AFF2331D31F00949BFA /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 043E6AFE2331D31F00949BFA /* Login.m */; };
 		043E6B082331D99300949BFA /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043E6B072331D99300949BFA /* TencentOpenAPI.framework */; };
 		044D926D22E75DD2006C66DF /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 044D926C22E75DD2006C66DF /* icon.bundle */; };
@@ -28,8 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		043E6AFA2331D2B600949BFA /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
-		043E6AFB2331D2B600949BFA /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		043E6AFA2331D2B600949BFA /* WXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXViewController.h; sourceTree = "<group>"; };
+		043E6AFB2331D2B600949BFA /* WXViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXViewController.m; sourceTree = "<group>"; };
 		043E6AFD2331D31F00949BFA /* Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
 		043E6AFE2331D31F00949BFA /* Login.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
 		043E6B072331D99300949BFA /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
@@ -93,15 +93,15 @@
 			path = Framework;
 			sourceTree = "<group>";
 		};
-		043E6AF92331D28800949BFA /* Mine */ = {
+		043E6AF92331D28800949BFA /* Weixin */ = {
 			isa = PBXGroup;
 			children = (
-				043E6AFA2331D2B600949BFA /* MineViewController.h */,
-				043E6AFB2331D2B600949BFA /* MineViewController.m */,
+				043E6AFA2331D2B600949BFA /* WXViewController.h */,
+				043E6AFB2331D2B600949BFA /* WXViewController.m */,
 				043E6AFD2331D31F00949BFA /* Login.h */,
 				043E6AFE2331D31F00949BFA /* Login.m */,
 			);
-			path = Mine;
+			path = Weixin;
 			sourceTree = "<group>";
 		};
 		044494672308ECBC002FC702 /* WKWebView */ = {
@@ -157,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				04B1BE28233A3E1300B50556 /* Dummy */,
-				043E6AF92331D28800949BFA /* Mine */,
+				043E6AF92331D28800949BFA /* Weixin */,
 				043E6ABF232FB1F700949BFA /* Framework */,
 				045FF5D023229F8D006CA88C /* Utils */,
 				04F1EA67231A4F680016B670 /* Size */,
@@ -336,7 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				043E6AFC2331D2B600949BFA /* MineViewController.m in Sources */,
+				043E6AFC2331D2B600949BFA /* WXViewController.m in Sources */,
 				658C052B251A085D00D95CB0 /* dummyViewController.m in Sources */,
 				045FF5D323229FA3006CA88C /* Screen.m in Sources */,
 				658C0520251A06AE00D95CB0 /* WKWebViewController.m in Sources */,

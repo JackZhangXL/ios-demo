@@ -6,28 +6,24 @@
 //  Copyright © 2020 张歆琳. All rights reserved.
 //
 
-#import "MineViewController.h"
+#import "WXViewController.h"
 #import "Login.h"
 #import <SDWebImage.h>
-#import "Screen.h"
-//#import "CommentManager.h"
 
-@interface MineViewController ()<UITableViewDelegate, UITableViewDataSource>
-
+@interface WXViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong, readwrite) UITableView *tableView;
 @property (nonatomic, strong, readwrite) UIView *tableViewHeaderView;
 @property (nonatomic, strong, readwrite) UIImageView *headerImageView;
-
 @end
 
-@implementation MineViewController
+@implementation WXViewController
 
 - (instancetype)init {
     self = [super init];
     if (self) {
         self.tabBarItem.title = @"我的";
-        self.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/home@2x.png"];
-        self.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/home_selected@2x.png"];
+        self.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/me@3x.png"];
+        self.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/me_selected@3x.png"];
     }
     return self;
 }
@@ -35,25 +31,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
+
     [self.view addSubview:({
         _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView;
     })];
-    
-    // 搜索框临时加在这里，应该加在 News 的 Controller 里的，但显示不出来
-//    MySearchBar *searchBar = [[MySearchBar alloc] initWithFrame:CGRectMake(0, 500, SCREEN_WIDTH - UI(20), 50)];
-//    [self.view addSubview:searchBar];
-    
-//    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 500, SCREEN_WIDTH - UI(20), 50)];
-//    button.backgroundColor = [UIColor lightGrayColor];
-//    [button addTarget:self action:@selector(_showCommentView) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:button];
 }
-
-#pragma mark -
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 2;
@@ -61,9 +46,9 @@
 
 // 虽然我们的 tableView 固定为 2 行，没有滚动，但板式代码要这么写，复用 cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mineTableViewCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"wxTableViewCell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"mineTableViewCell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"wxTableViewCell"];
     }
     return cell;
 }
@@ -106,7 +91,7 @@
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section{
     if (![[Login sharedLogin] isLogin]) {
         [_headerImageView setImage:[UIImage imageNamed:@"icon.bundle/icon_QQ.png"]];
-    }else{
+    } else{
         [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:[Login sharedLogin].avatarUrl]];
     }
 }
@@ -118,7 +103,6 @@
         cell.textLabel.text = [[Login sharedLogin] isLogin] ? [Login sharedLogin].address: @"地区";
     }
 }
-
 #pragma mark -
 
 - (void)_tapImage {
@@ -128,13 +112,10 @@
                 [self.tableView reloadData];
             }
         }];
-    }else{
+    } else{
         [[Login sharedLogin] logOut];
         [self.tableView reloadData];
     }
 }
 
-- (void)_showCommentView {
-//    [[CommentManager sharedManager] showCommentView];
-}
 @end

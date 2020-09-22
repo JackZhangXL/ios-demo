@@ -1,5 +1,5 @@
 //
-//  MineViewController.h
+//  WXViewController.h
 //  ios-demo
 //
 //  Created by 张歆琳 on 2020/9/22.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MineViewController : UIViewController
+@interface WXViewController : UIViewController
 
 @end
 
