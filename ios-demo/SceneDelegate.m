@@ -9,7 +9,7 @@
 #import "SceneDelegate.h"
 #import "WKWebViewController.h"
 #import "SizeViewController.h"
-//#import "WXViewController.h"
+#import "WXViewController.h"
 #import "dummyViewController.h"
 
 @interface SceneDelegate ()
@@ -33,10 +33,10 @@
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:wkvc];
 
     SizeViewController *svc = [[SizeViewController alloc] init];
-//    WXViewController *wxc = [[WXViewController alloc] init];
+    WXViewController *wxvc = [[WXViewController alloc] init];
     dummyViewController *dvc = [[dummyViewController alloc] init];
 
-    [tabBarC setViewControllers:@[nc, svc/*, wxc, dvc*/]];   // tab 位置是按这个顺序
+    [tabBarC setViewControllers:@[nc, svc, wxvc/*, dvc*/]];   // tab 位置是按这个顺序
     tabBarC.delegate = self;    // 实现delegate第二步：设置self为delegate的接收者
 
     [self.window setRootViewController:tabBarC];

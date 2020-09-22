@@ -28,6 +28,9 @@
 		658C05062519A8C900D95CB0 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 658C05052519A8C900D95CB0 /* TableViewCell.m */; };
 		658C05082519A98C00D95CB0 /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 658C05072519A98C00D95CB0 /* icon.bundle */; };
 		658C050C2519ADF300D95CB0 /* MockData.m in Sources */ = {isa = PBXBuildFile; fileRef = 658C050B2519ADF300D95CB0 /* MockData.m */; };
+		658C05102519AF6500D95CB0 /* WXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658C050F2519AF6500D95CB0 /* WXViewController.m */; };
+		658C05132519AFC800D95CB0 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 658C05122519AFC800D95CB0 /* Login.m */; };
+		658C05152519B04200D95CB0 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658C05142519B04200D95CB0 /* TencentOpenAPI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,11 @@
 		658C05072519A98C00D95CB0 /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = icon.bundle; sourceTree = "<group>"; };
 		658C050A2519ADF300D95CB0 /* MockData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockData.h; sourceTree = "<group>"; };
 		658C050B2519ADF300D95CB0 /* MockData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockData.m; sourceTree = "<group>"; };
+		658C050E2519AF6500D95CB0 /* WXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXViewController.h; sourceTree = "<group>"; };
+		658C050F2519AF6500D95CB0 /* WXViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXViewController.m; sourceTree = "<group>"; };
+		658C05112519AFC800D95CB0 /* Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
+		658C05122519AFC800D95CB0 /* Login.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
+		658C05142519B04200D95CB0 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		75422CD3FCA3AEB551A70879 /* Pods-ios-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-demo.release.xcconfig"; path = "Target Support Files/Pods-ios-demo/Pods-ios-demo.release.xcconfig"; sourceTree = "<group>"; };
 		C0B32EE44B4AF6BD05DEF9FD /* libPods-ios-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -93,6 +101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				090EC09D08829AD39E6FF0BC /* libPods-ios-demo.a in Frameworks */,
+				658C05152519B04200D95CB0 /* TencentOpenAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +147,7 @@
 		658C04AF2519A18D00D95CB0 /* ios-demo */ = {
 			isa = PBXGroup;
 			children = (
+				658C050D2519AF4300D95CB0 /* Framework */,
 				658C05092519AA2700D95CB0 /* Weixin */,
 				658C05072519A98C00D95CB0 /* icon.bundle */,
 				658C05002519A86400D95CB0 /* Size */,
@@ -231,8 +241,20 @@
 		658C05092519AA2700D95CB0 /* Weixin */ = {
 			isa = PBXGroup;
 			children = (
+				658C050E2519AF6500D95CB0 /* WXViewController.h */,
+				658C050F2519AF6500D95CB0 /* WXViewController.m */,
+				658C05112519AFC800D95CB0 /* Login.h */,
+				658C05122519AFC800D95CB0 /* Login.m */,
 			);
 			path = Weixin;
+			sourceTree = "<group>";
+		};
+		658C050D2519AF4300D95CB0 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				658C05142519B04200D95CB0 /* TencentOpenAPI.framework */,
+			);
+			path = Framework;
 			sourceTree = "<group>";
 		};
 		C9EFCD07FE0740492461034F /* Pods */ = {
@@ -415,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				658C04FF2519A6C900D95CB0 /* dummyViewController.m in Sources */,
+				658C05132519AFC800D95CB0 /* Login.m in Sources */,
 				658C04E82519A4A300D95CB0 /* WKWebViewController.m in Sources */,
 				658C04B22519A18D00D95CB0 /* AppDelegate.m in Sources */,
 				658C05032519A87A00D95CB0 /* SizeViewController.m in Sources */,
@@ -423,6 +446,7 @@
 				658C04B52519A18D00D95CB0 /* SceneDelegate.m in Sources */,
 				658C050C2519ADF300D95CB0 /* MockData.m in Sources */,
 				658C04FB2519A62D00D95CB0 /* Screen.m in Sources */,
+				658C05102519AF6500D95CB0 /* WXViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,6 +617,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ios-demo/Framework",
+				);
 				INFOPLIST_FILE = "ios-demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -610,6 +638,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ios-demo/Framework",
+				);
 				INFOPLIST_FILE = "ios-demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <TencentOpenAPI/TencentOAuth.h>
 
 @interface AppDelegate ()
 
@@ -20,6 +21,22 @@
     return YES;
 }
 
+//- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options API_AVAILABLE(ios(9.0)) {
+////    return [TencentOAuth HandleOpenURL:url];
+//    if (YES == [TencentOAuth CanHandleOpenURL:url])
+//    {
+//        return [TencentOAuth HandleOpenURL:url];
+//    }
+//    return YES;
+//}
+//
+//- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url API_DEPRECATED_WITH_REPLACEMENT("application:openURL:options:", ios(2.0, 9.0)) API_UNAVAILABLE(tvos) {
+//    return [TencentOAuth HandleOpenURL:url];
+//}
+//
+//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(id)annotation API_DEPRECATED_WITH_REPLACEMENT("application:openURL:options:", ios(4.2, 9.0)) API_UNAVAILABLE(tvos) {
+//    return [TencentOAuth HandleOpenURL:url];
+//}
 
 #pragma mark - UISceneSession lifecycle
 
