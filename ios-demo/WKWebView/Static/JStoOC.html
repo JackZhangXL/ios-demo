@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+    <title>WKWebView</title>
+    <meta charset="utf-8">
+    <style type='text/css'>
+    body {
+        background-color: lightgray;
+    }
+    p {
+        text-align: center;
+    }
+    img {
+        width: 100px;
+        height: 100px;
+        align: middle;
+    }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center">这是个H5页面</h2>
+    <p style="background-color: #e6b500">正常h5间跳转</p>
+    <p><a href="https://zxljack.com/">&lt;a&gt;标签跳转</a><p>
+    <p><img src="https://zxljack.com/wp-content/uploads/2019/11/header.jpg" onclick="clickAvatar();" /></img><p>
+    <p style="background-color: #e6b500">js调用oc（WKUIDelegate）</p>
+    <p><a href="https://zxljack.com/" target="_blank">&lt;a&gt;标签带 _blank 跳转</a><p>
+    <p><button onclick="js2ocShowAlert()">oc捕获到js的alert</button></p>
+    <p>
+        <button onclick="js2ocShowConfirm()">oc捕获到js的confirm</button>
+        <span id="confirmResult"></span>
+    </p>
+    <p>
+        <button onclick="js2ocShowPrompt()">oc捕获到js的prompt</button>
+        <span id="promptResult"></span>
+    </p>
+    <p style="background-color: #e6b500">js调用oc（WKNavigationDelegate）</p>
+    <p><a href="mymapi://callName_?https://zxljack.com/">oc捕获到自定义协议头的请求</a></p>
+    <p style="background-color: #e6b500">js调用oc（WKScriptMessageHandler）</p>
+    <p><button onclick="js2coFunc()">js发送消息给native</button></p>
+    <p style="background-color: #e6b500">多媒体区域</p>
+    <p>
+       <video width="384" height="288" controls="controls" preload="auto" playsinline poster="https://zxljack.com/wp-content/uploads/2019/11/timg.jpeg">
+           <source src="https://zxljack.com/wp-content/uploads/2019/11/cdbfc8b0-25db-44ba-ad5e-f8f2c2bf1e19.mp4" type="video/mp4" />
+        </video>
+    </p>
+    
+<script type = "text/javascript">
+    // OC调用JS改变背景色
+    function oc2jsChangeColor() {
+        var r=Math.floor(Math.random()*256);
+        var g=Math.floor(Math.random()*256);
+        var b=Math.floor(Math.random()*256);
+        document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
+    }
+    function clickAvatar() {
+        window.location.href = "https://zxljack.com";
+    }
+    function js2ocShowAlert() {
+        alert("被OC截获到alert啦！");
+    }
+    function js2ocShowConfirm() {
+        var c = confirm("Are you OK？");
+        if (c) {
+            document.getElementById("confirmResult").innerText = "I'm OK"
+        } else {
+            document.getElementById("confirmResult").innerText = ""
+        }
+    }
+    function js2ocShowPrompt() {
+        var p = prompt("随便输入点什么", "")
+        if (p !== null) {
+            document.getElementById("promptResult").innerText = p;
+        }
+    }
+    function js2coFunc() {
+        window.webkit.messageHandlers.js2coPostMessage.postMessage({"name": "Jack"});
+    }
+</script>
+</body>
+</html>
