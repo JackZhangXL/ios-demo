@@ -27,6 +27,7 @@
 		658C05032519A87A00D95CB0 /* SizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658C05022519A87A00D95CB0 /* SizeViewController.m */; };
 		658C05062519A8C900D95CB0 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 658C05052519A8C900D95CB0 /* TableViewCell.m */; };
 		658C05082519A98C00D95CB0 /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 658C05072519A98C00D95CB0 /* icon.bundle */; };
+		658C050C2519ADF300D95CB0 /* MockData.m in Sources */ = {isa = PBXBuildFile; fileRef = 658C050B2519ADF300D95CB0 /* MockData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		658C05042519A8C900D95CB0 /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		658C05052519A8C900D95CB0 /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		658C05072519A98C00D95CB0 /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = icon.bundle; sourceTree = "<group>"; };
+		658C050A2519ADF300D95CB0 /* MockData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockData.h; sourceTree = "<group>"; };
+		658C050B2519ADF300D95CB0 /* MockData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockData.m; sourceTree = "<group>"; };
 		75422CD3FCA3AEB551A70879 /* Pods-ios-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-demo.release.xcconfig"; path = "Target Support Files/Pods-ios-demo/Pods-ios-demo.release.xcconfig"; sourceTree = "<group>"; };
 		C0B32EE44B4AF6BD05DEF9FD /* libPods-ios-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -208,6 +211,8 @@
 			children = (
 				658C04FD2519A6C900D95CB0 /* dummyViewController.h */,
 				658C04FE2519A6C900D95CB0 /* dummyViewController.m */,
+				658C050A2519ADF300D95CB0 /* MockData.h */,
+				658C050B2519ADF300D95CB0 /* MockData.m */,
 			);
 			path = Dummy;
 			sourceTree = "<group>";
@@ -416,6 +421,7 @@
 				658C04C32519A19000D95CB0 /* main.m in Sources */,
 				658C05062519A8C900D95CB0 /* TableViewCell.m in Sources */,
 				658C04B52519A18D00D95CB0 /* SceneDelegate.m in Sources */,
+				658C050C2519ADF300D95CB0 /* MockData.m in Sources */,
 				658C04FB2519A62D00D95CB0 /* Screen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
