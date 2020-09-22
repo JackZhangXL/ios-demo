@@ -12,7 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^LoginFinishBlock)(BOOL isLogin);
 
+/**
+ QQ登录和分享相关逻辑
+ */
 @interface Login : NSObject
+
 @property(nonatomic, strong, readonly)NSString *nick;
 @property(nonatomic, strong, readonly)NSString *address;
 @property(nonatomic, strong, readonly)NSString *avatarUrl;
@@ -27,6 +31,7 @@ typedef void(^LoginFinishBlock)(BOOL isLogin);
 
 #pragma mark - 分享
 - (void)shareToQQWithArticleUrl:(NSURL *)articleUrl;
+
 @end
 
 NS_ASSUME_NONNULL_END

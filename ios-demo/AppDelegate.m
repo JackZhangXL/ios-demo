@@ -7,9 +7,12 @@
 //
 
 #import "AppDelegate.h"
-#import <TencentOpenAPI/TencentOAuth.h>
+#import "WKWebViewController.h"
+#import "SizeViewController.h"
+#import "MineViewController.h"
+#import "dummyViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UITabBarControllerDelegate>   // 实现delegate第一步：声明要实现的delegate
 
 @end
 
@@ -17,42 +20,74 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+//    UIWindowScene *windowScene = (UIWindowScene *)scene;
+//    self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
+
+    // UIWindow 加载 UITabBarController，每个 tab 加载 UINavigationController。这样即使上面页面切换，也不影响底部tabBar，底部tabBar永远存在。
+    UITabBarController *tabBarC = [[UITabBarController alloc] init];
+    WKWebViewController *wkvc = [[WKWebViewController alloc] init];
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:wkvc];
+    
+    SizeViewController *svc = [[SizeViewController alloc] init];
+    MineViewController *meVC = [[MineViewController alloc] init];
+//    WXViewController *wxvc = [[WXViewController alloc] init];
+    dummyViewController *dvc = [[dummyViewController alloc] init];
+
+    [tabBarC setViewControllers:@[nc, svc/*, wxvc*/, dvc, meVC]];   // tab 位置是按这个顺序
+    tabBarC.delegate = self;    // 实现delegate第二步：设置self为delegate的接收者
+
+    [self.window setRootViewController:tabBarC];
+    [self.window makeKeyAndVisible];
+    
+    
+    
+//    UITabBarController *tabBarC = [[UITabBarController alloc] init];
+
+//    NewsController *newsVC = [[NewsController alloc] init];
+//    // 和 UITabBarController 一样，UINavigationController 也需要一个 RootCViewController，当所有页面都 pop 掉后显示个兜底的页面
+//    UINavigationController *newsNaviC = [[UINavigationController alloc] initWithRootViewController:newsVC];
+//    newsNaviC.tabBarItem.title = @"新闻";
+//    newsNaviC.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/page@2x.png"];
+//    newsNaviC.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/page_selected@2x.png"];
+//
+//    VideoViewController *videoVC = [[VideoViewController alloc] init];
+////    RecommendViewController *likeVC = [[RecommendViewController alloc] init];
+//    MineViewController *meVC = [[MineViewController alloc] init];
+//
+//    [tabBarC setViewControllers:@[newsNaviC, videoVC, /*likeVC,*/ meVC]];   // tab 位置是按这个顺序
+//
+//    tabBarC.delegate = self;    // 实现delegate第二步：设置self为delegate的接收者
+//
+//    self.window.rootViewController = tabBarC;
+//    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
-//- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options API_AVAILABLE(ios(9.0)) {
-////    return [TencentOAuth HandleOpenURL:url];
-//    if (YES == [TencentOAuth CanHandleOpenURL:url])
-//    {
-//        return [TencentOAuth HandleOpenURL:url];
-//    }
-//    return YES;
-//}
-//
-//- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url API_DEPRECATED_WITH_REPLACEMENT("application:openURL:options:", ios(2.0, 9.0)) API_UNAVAILABLE(tvos) {
-//    return [TencentOAuth HandleOpenURL:url];
-//}
-//
-//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(id)annotation API_DEPRECATED_WITH_REPLACEMENT("application:openURL:options:", ios(4.2, 9.0)) API_UNAVAILABLE(tvos) {
-//    return [TencentOAuth HandleOpenURL:url];
-//}
-
-#pragma mark - UISceneSession lifecycle
-
-
-- (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options {
-    // Called when a new scene session is being created.
-    // Use this method to select a configuration to create the new scene with.
-    return [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
+- (void)applicationWillResignActive:(UIApplication *)application {
+    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
 }
 
 
-- (void)application:(UIApplication *)application didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions {
-    // Called when the user discards a scene session.
-    // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-    // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
+    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
+
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+}
+
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+}
+
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
 
 @end
