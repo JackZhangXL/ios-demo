@@ -43,18 +43,13 @@
 
     _finishBlock = [finishBlock copy];
 
-    NSArray* permissions = [NSArray arrayWithObjects:
-                            kOPEN_PERMISSION_GET_USER_INFO,
-                            kOPEN_PERMISSION_GET_SIMPLE_USER_INFO,
-                            nil];
-    [_oauth authorize:permissions];
+    [_oauth authorize:@[kOPEN_PERMISSION_GET_USER_INFO,
+                        kOPEN_PERMISSION_GET_SIMPLE_USER_INFO]];
     
 //    _oauth.authMode = kAuthModeClientSideToken;
 //    [_oauth authorize:@[kOPEN_PERMISSION_GET_USER_INFO,
 //                        kOPEN_PERMISSION_GET_SIMPLE_USER_INFO,
 //                        kOPEN_PERMISSION_ADD_ALBUM,
-////                        kOPEN_PERMISSION_ADD_ONE_BLOG,
-////                        kOPEN_PERMISSION_ADD_SHARE,
 //                        kOPEN_PERMISSION_ADD_TOPIC,
 //                        kOPEN_PERMISSION_CHECK_PAGE_FANS,
 //                        kOPEN_PERMISSION_GET_INFO,
@@ -89,35 +84,18 @@
 }
 
 - (void)tencentDidLogout {
-    NSLog(@"tencentDidLogout");
+    NSLog(@"登出成功");
 }
-
-//- (BOOL)forceWebLogin {
-//    return YES;
-//}
-
 
 // 登录成功后，QQ只返回一个OpenID，我们还需要通过OpenID去获取用户信息
 - (void)getUserInfoResponse:(APIResponse *)response {
     NSDictionary *userInfo = response.jsonResponse;
-    _nick = userInfo[@"nickname"];
-    _address = userInfo[@"city"];
     _avatarUrl = userInfo[@"figureurl_qq_2"];
+    _nick = userInfo[@"nickname"];
+    _openid = _oauth.openId;
     if (_finishBlock) {
         _finishBlock(YES);
     }
 }
-//
-//#pragma mark -
-//
-//- (void)shareToQQWithArticleUrl:(NSURL *)articleUrl {
-//
-//    //登陆校验
-//    //loginWithFinishBlock
-//
-////    QQApiNewsObject *newsObj = [QQApiNewsObject objectWithURL:articleUrl title:@"iOS" description:@"分享测试" previewImageURL:nil];
-////    SendMessageToQQReq *req = [SendMessageToQQReq reqWithContent:newsObj];
-////    __unused QQApiSendResultCode sent = [QQApiInterface SendReqToQZone:req];
-//}
 
 @end

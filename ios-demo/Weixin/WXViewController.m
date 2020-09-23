@@ -61,11 +61,11 @@
 // 头部图片
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if (!_tableViewHeaderView) {
-        _tableViewHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
+        _tableViewHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
         _tableViewHeaderView.backgroundColor = [UIColor whiteColor];
         
         [_tableViewHeaderView addSubview:({
-            _headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 30, self.view.frame.size.width, 140)];
+            _headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 30, self.view.frame.size.width, 60)];
             _headerImageView.backgroundColor = [UIColor whiteColor];
             _headerImageView.contentMode = UIViewContentModeScaleAspectFit;
             _headerImageView.clipsToBounds = YES;
@@ -84,7 +84,7 @@
 
 // 头图高度 200
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 200;
+    return 100;
 }
 
 // 未登录时显示默认头图，登录后显示自己的图片
@@ -100,7 +100,7 @@
     if (indexPath.row == 0) {
         cell.textLabel.text = [[Login sharedLogin] isLogin] ? [Login sharedLogin].nick: @"昵称";
     } else {
-        cell.textLabel.text = [[Login sharedLogin] isLogin] ? [Login sharedLogin].address: @"地区";
+        cell.textLabel.text = [[Login sharedLogin] isLogin] ? [Login sharedLogin].openid: @"openId";
     }
 }
 #pragma mark -
@@ -117,5 +117,4 @@
         [self.tableView reloadData];
     }
 }
-
 @end
